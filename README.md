@@ -7,20 +7,26 @@ the same simplicity to building GUI apps, thanks to Graffiti, Node.js, and Nix.
 
 ## Step 1. Preparation
 
-There is a single dependency that you'll need to install manually.
-That is [Nix](https://nixos.org/nix/), an universal build tool and package
-manager that will take care of all further dependencies in an efficient and
-reproducible way.
+Clone this repository:
 
-* On Linux and Mac, install Nix from [here](https://nixos.org/nix/download.html).
-* On Windows 10, refer to [this guide](https://nathan.gs/2019/04/12/nix-on-windows/)
-  to enable Nix under WSL.
-* On Windows 7, you're going to need a [VM](https://nixos.org/nixos/download.html#virtualbox-appliances).
-  (And sure, I know it's not supported by Microsoft anymore. Like that ever helped.)
+```
+git clone https://github.com/egasimus/graffiti-nix
+cd graffiti-nix
+```
+
+Install [Nix](https://nixos.org/nix/) package manager:
+
+* [Get Nix for Linux or Mac](https://nixos.org/nix/download.html).
+* [How to install Nix on Windows 10 with WSL](https://nathan.gs/2019/04/12/nix-on-windows/)
+* [Official NixOS OVA](https://nixos.org/nixos/download.html#virtualbox-appliances).
+
+Try it out:
+
+```
+./01-tutorial.js
+```
 
 ## Step 2. Hello Graffiti
-
-Now we're about to get to the good part.
 
 [Graffiti](https://github.com/cztomsik/graffiti) lets you build beautiful GUI
 apps using familiar Web technologies. Unlike Electron or NW.js, Graffiti does
@@ -40,15 +46,6 @@ chmod +x hello-world
 Then open `hello-world` with your favorite file, and paste this:
 
 ```js
-#! /usr/bin/env nix-shell
-/* the following line will be parsed by nix-shell:
-#! nix-shell -i graffiti/bin/graffiti
-*/
-document.body.appendChild(
-  Object.assign(document.createElement('h1'), {
-    style: 'background:green',
-    textContent: 'Hello Graffiti!'
-  }))
 ```
 
 Save it, and run it.
