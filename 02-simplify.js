@@ -14,10 +14,10 @@ const {appendTo, el, every, extend} = require('./03-framework.js')
  */
 
 const [container] = appendTo(document.body)(
-  extend(el('div'), { style: { padding: '100px' } }))
+  el('div', { style: { padding: '100px' } }))
 
 const [heading, time, src] = appendTo(container)(
-  extend(el('h1'), { textContent: 'Hello' }),
+  el('h1', { textContent: 'Hello' }),
   el('span'),
   el('div'))
 src.textContent = require('fs').readFileSync(__filename, 'utf8')

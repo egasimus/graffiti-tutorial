@@ -2,7 +2,6 @@
 // It's just a library of helper functions to improve ergonomics.
 // Feel free to use it in your future DOM-related activities.
 const appendTo = x => (...y) => y.map(z=>x.appendChild(z))
-const el = (x='div') => document.createElement(x)
 const every = x => y => setInterval(y, x)
 const extend = (x, y={}) => {
   for (let i in y) {
@@ -12,4 +11,5 @@ const extend = (x, y={}) => {
   }
   return x
 }
+const el = (x='div', attrs={}) => extend(document.createElement(x), attrs)
 module.exports = {appendTo, el, every, extend}
