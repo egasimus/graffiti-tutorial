@@ -1,0 +1,6 @@
+[submodule "graffiti"]
+	path = graffiti
+	url = git@github.com:egasimus/graffiti.git
+[submodule "node-glfw-dylib"]
+	path = node-glfw-dylib
+	url = git@github.com:egasimus/node-glfw-dylib.git
